@@ -18,6 +18,7 @@ stages:
 testreact:
   stage: test
   script:
+    - yarn
     - yarn test
 
 deployToAWS:

@@ -1,0 +1,28 @@
+# Node docker image on which this would be run
+image: node:8.9.0
+
+stages:
+  - test
+  - deploy
+
+#eslint:
+#  stage: lint
+#  script:
+#    # Install eslint
+#    - |
+#      npm install eslint \
+#      eslint-config-eslint
+#    # Run eslint
+#    - node_modules/eslint/bin/eslint.js .
+
+testreact:
+  stage: test
+  script:
+    - yarn test
+
+deployToAWS:
+  only:
+    - master
+  stage: deploy
+  script:
+    - bash deploy/deploy.sh

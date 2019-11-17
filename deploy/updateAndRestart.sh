@@ -2,7 +2,7 @@ set -e
 
 # Delete the old repo
 sudo su
-rm -rf /home/ubuntu/html/ws-bank/
+rm -rf /home/ubuntu/html/bank-pro/
 sudo su ubuntu
 
 # clone the repo again

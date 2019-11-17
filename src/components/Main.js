@@ -12,7 +12,7 @@ class Main extends Component {
         let loggedIn = (sessionStorage.getItem('authToken'));
         if(loggedIn){
             return (
-                <BrowserRouter>
+                <BrowserRouter basename={'/bank-pro/build'}>
                     <div>
                         <h1 className="title">Bank Pro</h1>
                         <ul className="header">
@@ -31,7 +31,7 @@ class Main extends Component {
             );
         } else{
             return (
-                <BrowserRouter>
+                <BrowserRouter basename={'/bank-pro/build'}>
                     <div className="content">
                         <Route path="*" component={Login}/>
                     </div>

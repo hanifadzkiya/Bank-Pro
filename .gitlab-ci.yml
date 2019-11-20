@@ -11,7 +11,7 @@ stages:
 #    # Install eslint
 #    - |
 #      npm install eslint \
-#      eslint-config-eslint
+#      eslint-config-standard
 #    # Run eslint
 #    - node_modules/eslint/bin/eslint.js .
 

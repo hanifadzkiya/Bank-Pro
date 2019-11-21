@@ -85,8 +85,11 @@ export function callTransactionService(NomorPengirim, NomorPenerima, Nominal){
                     'Accept' : '*/*',
                     'Cache-Control' : 'no-cache'}
         }).then(res=>{
-        console.log(res);
-        alert(res);
-    }).catch(err=>{console.log(err)});
-    alert(sr);
+        // console.log(res);
+        alert("Transfer berhasil sebesar "+Nominal+" ke rekening "+NomorPenerima);
+    }).catch(err=>{
+        console.log(err);
+        alert("Transfer gagal, mohon cek saldo atau rekening tujuan anda");
+    });
+    alert("Mohon tunggu sampai pesan konfirmasi muncul");
 }

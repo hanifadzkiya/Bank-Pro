@@ -1,12 +1,33 @@
+import './App.css';
+import './Home.css';
 import React, { Component } from "react";
+import { ShowDetailRekening } from '../services/ShowDetailRekening';
+import { PostWithSOAP} from "../services/PostRequest";
 
 class Home extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            detailRekening : null
+        }
+    }
+    componentDidMount() {
+        let baseUrl = 'https://cors-anywhere.herokuapp.com/3.1.12.44:8080/ws-bank_war/services/wsbank';
+
+        PostWithSOAP(baseUrl, sessionStorage.getItem('rekening')).then((result) =>{
+            console.log('GOTCHA');
+            console.log(result);
+            ShowDetailRekening(result["rekening"]);
+        });
+
+    }
     render() {
         return (
             <div>
-                <h2>Home</h2>
-                <p>Halaman utama menampilkan nama pemilik, nomor rekening, nama bank, dan saldo terakhir.
-                    Pada menu utama, pengguna juga dapat memilih untuk transfer ke rekening lain dan melihat riwayat transaksi.</p>
+                <h2>Detail Rekening</h2>
+                <table id="homeDetail">
+
+                </table>
             </div>
         );
     }

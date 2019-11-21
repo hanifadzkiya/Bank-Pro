@@ -52,7 +52,7 @@ export function PostWithSOAP(url, rekening){
                 var tObj = parser.getTraversalObj(response.data,options);
                 var jsonObj = parser.convertToJson(tObj,options);
 
-                lastResult = jsonObj['S:Envelope']['S:Body']['ns2:getRekeningDetailResponse']['return']['listTransaksi'];
+                lastResult = jsonObj['S:Envelope']['S:Body']['ns2:getRekeningDetailResponse']['return'];
             }
             return lastResult;
         }).catch((error) => {

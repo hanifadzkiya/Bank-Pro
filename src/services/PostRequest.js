@@ -49,17 +49,10 @@ export function PostWithSOAP(url, rekening){
                     stopNodes: ["parse-me-as-string"]
                 };
 
-                // if( parser.validate(xmlData) === true) { //optional (it'll return an object in case it's not valid)
-                //     var jsonObj = parser.parse(xmlData,options);
-                // }
-
-// Intermediate obj
                 var tObj = parser.getTraversalObj(response.data,options);
                 var jsonObj = parser.convertToJson(tObj,options);
 
                 lastResult = jsonObj['S:Envelope']['S:Body']['ns2:getRekeningDetailResponse']['return']['listTransaksi'];
-                // console.log(result);
-                // console.log(result['0']);
             }
             return lastResult;
         }).catch((error) => {

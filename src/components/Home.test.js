@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Home from './Home';
 
 // setup file
 import { configure } from 'enzyme';
@@ -12,10 +12,7 @@ configure({ adapter: new Adapter() });
 import { shallow, mount, render } from 'enzyme';
 
 
-it('Render App', () => {
-	// const wrapper = shallow(<App />);
-	// expect(wrapper.contains(<div/>)).toEqual(true);
-	const div = document.createElement('div');
-	ReactDOM.render(<App />, div);
-	ReactDOM.unmountComponentAtNode(div);
+it('Render Home', () => {
+	const wrapper = shallow(<Home />);
+	expect(wrapper.contains(<h2>Home</h2>)).toEqual(true);
 });

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Redirect} from 'react-router-dom';
+import { ValidasiRekening } from "../services/ValidasiRekening";
 
 class Login extends Component {
     constructor(props){
@@ -19,9 +20,21 @@ class Login extends Component {
         })
     }
 
-    login(){
-        sessionStorage.setItem('rekening', this.state.rekening);
-        sessionStorage.setItem('authToken', 'testLoginToken');
+    login(e){
+      let baseUrl = 'https://cors-anywhere.herokuapp.com/3.1.12.44:8080/ws-bank_war/services/wsbank';
+
+        ValidasiRekening(baseUrl, this.state.rekening).then((result) =>{
+            console.log('GOTCHA');
+            console.log(result);
+            if(result){
+              sessionStorage.setItem('rekening', this.state.rekening);
+              sessionStorage.setItem('authToken', 'testLoginToken');
+              window.location.reload();
+            } else {
+              alert("Nomor rekening salah");
+            }
+        });
+      e.preventDefault();
     }
 
     render() {

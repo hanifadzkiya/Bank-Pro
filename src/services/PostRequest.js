@@ -62,3 +62,31 @@ export function PostWithSOAP(url, rekening){
 
     return veryLastResult();
 }
+
+export function callTransactionService(NomorPengirim, NomorPenerima, Nominal){
+    var url = 'https://cors-anywhere.herokuapp.com/3.1.12.44:8080/ws-bank_war/services/wsbank';
+
+    var sr =
+        '<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">' +
+        '<S:Body>' +
+        '<ns2:transfer xmlns:ns2="http://publisher/">' +
+        '  <arg0>'+NomorPengirim+'</arg0>' +
+        '  <arg1>'+NomorPenerima+'</arg1>' +
+        '  <arg2>'+Nominal+'</arg2>' +
+        '</ns2:transfer>' +
+        '</S:Body>' +
+        '</S:Envelope>';
+
+    axios.post(url,
+        sr,
+        {headers:
+                {   'user-agent': 'sampleTest',
+                    'Content-Type': 'text/xml',
+                    'Accept' : '*/*',
+                    'Cache-Control' : 'no-cache'}
+        }).then(res=>{
+        console.log(res);
+        alert(res);
+    }).catch(err=>{console.log(err)});
+    alert(sr);
+}

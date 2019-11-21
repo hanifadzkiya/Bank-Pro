@@ -1,27 +1,24 @@
-#submit {
-    border: none;
-    background: #2d3b48;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
+.left-side {
+    height: 100vh;
+    background: #368ef9;
 }
 
-#input-rekening {
-	border: 1px solid #2d3b48;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-form#ios input[type=password]{
-    height: 50px;
-    width: 40px;
+form {
     text-align: center;
-    font-size: 2em;
-    border: 1px solid #000;
-} 
+}
+
+.input-rekening {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.submit-rekening {
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #368ef9;
+    color: white;
+    border: none;
+}

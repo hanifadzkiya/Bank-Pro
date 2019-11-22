@@ -14,5 +14,5 @@ import { shallow, mount, render } from 'enzyme';
 
 it('Render Home', () => {
 	const wrapper = shallow(<Home />);
-	expect(wrapper.contains(<h2>Home</h2>)).toEqual(true);
+	expect(wrapper.contains(<h2>Detail Rekening</h2>)).toEqual(true);
 });

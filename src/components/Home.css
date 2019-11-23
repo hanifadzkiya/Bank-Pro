@@ -1,0 +1,7 @@
+tr td:first-child {
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  background: #4caf50;
+}
+

@@ -10,6 +10,7 @@ class History extends Component {
 
         PostWithSOAP(baseUrl, sessionStorage.getItem('rekening')).then((result) =>{
             console.log('GOTCHA');
+            result = result['listTransaksi'];
             console.log(result);
 
             var arr = [];

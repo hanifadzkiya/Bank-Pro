@@ -11,8 +11,6 @@ function generateTableHead(table) {
 }
 
 function createTable(table, cols) {
-
-
     for (let element of cols) {
         let row = table.insertRow();
         for (let key in element) {

@@ -16,7 +16,6 @@ export function PostWithSOAP(url, rekening){
     const veryLastResult = () => {
         return axios.post(url, formBody, {
             headers : {
-                'user-agent': 'sampleTest',
                 'Content-Type': 'text/xml',
                 'Accept' : '*/*',
                 'Cache-Control' : 'no-cache'

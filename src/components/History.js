@@ -17,7 +17,7 @@ class History extends Component {
             var temp = [];
             for(let i = 0;i<result['length'];i++){
                 temp = [];
-                temp.push(result[i.toString()]['noRekening_2']);
+                temp.push(result[i.toString()]['noRekening2']);
                 temp.push(result[i.toString()]['jenis']);
                 temp.push(result[i.toString()]['jumlah']);
                 temp.push(result[i.toString()]['waktuTransaksi']);

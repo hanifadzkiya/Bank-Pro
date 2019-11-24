@@ -42,7 +42,7 @@ class Login extends Component {
             <div>
                 <h2>Login</h2>
                 <p>Masukkan nomor rekening Anda</p>
-                <form onSubmit = {this.login}>
+                <form id="loginform" onSubmit = {this.login}>
                     <input
                         name="rekening"
                         placeholder="Masukan rekening..."

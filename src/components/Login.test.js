@@ -27,8 +27,19 @@ it('rekening check',()=>
 	const wrapper = shallow(<Login/>);
 	wrapper.find('input[type="number"]').simulate('change', {preventDefault, target: {value: 98,name: 'rekening'}});
 	expect(wrapper.state('rekening')).toEqual(98);	
+});
+
+describe('User login', () => {
+	it('fail if no credentials', () => {
+		const fakeEvent = { preventDefault: () => console.log('preventDefault') };
+		const login = shallow(<Login />);
+		expect(login.find('#loginform').length).toBe(1);
+		login.find('#loginform').simulate('submit', fakeEvent);
+		expect(sessionStorage["rekening"]).toBe(undefined);
+	});
 })
 
+//
 // it('Should change value when onChange was called', () => {
 //     const onChange = jest.fn();
 //     const props = {

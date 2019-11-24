@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Cookies from 'universal-cookie';
 
 export function getRequestToken(url) {
     //Create body from username and password

@@ -7,7 +7,6 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
 import Login from "./Login";
 
 it('Render Transfer', () => {

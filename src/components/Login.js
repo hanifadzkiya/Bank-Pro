@@ -24,8 +24,6 @@ class Login extends Component {
       let baseUrl = 'https://cors-anywhere.herokuapp.com/3.1.12.44:8080/ws-bank_war/services/wsbank';
 
         ValidasiRekening(baseUrl, this.state.rekening).then((result) =>{
-            console.log('GOTCHA');
-            console.log(result);
             if(result){
               sessionStorage.setItem('rekening', this.state.rekening);
               sessionStorage.setItem('authToken', 'testLoginToken');

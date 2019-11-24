@@ -9,7 +9,7 @@ export function ValidasiRekening(url, rekening){
             '<S:Body>' +
             '<ns2:isRekeningExist xmlns:ns2="http://publisher/">' +
             '  <arg0>' + rekening + '</arg0>' +
-            '  <arg1>' + 'abcdef' + '</arg1>' +
+            '  <arg1>' + result + '</arg1>' +
             '</ns2:isRekeningExist>' +
             '</S:Body>' +
             '</S:Envelope>';

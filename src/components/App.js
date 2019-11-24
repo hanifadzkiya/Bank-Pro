@@ -3,12 +3,14 @@ import { Route, NavLink, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
 import Transfer from "./Transfer";
 import History from "./History";
+
+import {getRequestToken} from "../services/PostRequest";
 // import NotFound from "./NotFound";
 import Login from "./Login";
 import Logout from "./Logout";
 
 class App extends Component {
-  render() {
+    render() {
     let loggedIn = (sessionStorage.getItem('authToken'));
     if(loggedIn){
       return (

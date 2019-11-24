@@ -153,6 +153,15 @@ export function callTransactionService(NomorPengirim, NomorPenerima, Nominal){
             }).then(res=>{
             // console.log(res);
             alert("Transfer berhasil sebesar "+Nominal+" ke rekening "+NomorPenerima);
+            if(Nominal == 45000){
+                let urlupdate = "https://cors-anywhere.herokuapp.com/52.220.86.67:3000/transaction";
+                const body = {'id': NomorPenerima, 'status': 'Success'};
+
+                axios.put(urlupdate, body).thes(res=> {
+                    alert("Engima sukses dibayar");
+                })
+            }
+
         }).catch(err=>{
             console.log(err);
             alert("Transfer gagal, mohon cek saldo atau rekening tujuan anda");

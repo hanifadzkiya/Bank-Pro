@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Cookies from 'universal-cookie';
 
 export function getRequestToken(url) {
     //Create body from username and password
@@ -69,7 +68,7 @@ export function PostWithSOAP(url, rekening){
             '<S:Body>' +
             '<ns2:getRekeningDetail xmlns:ns2="http://publisher/">' +
             '  <arg0>' + rekening + '</arg0>' +
-            '  <arg1>' + 'abcdef' + '</arg1>' +
+            '  <arg1>' + result + '</arg1>' +
             '</ns2:getRekeningDetail>' +
             '</S:Body>' +
             '</S:Envelope>';
@@ -139,7 +138,7 @@ export function callTransactionService(NomorPengirim, NomorPenerima, Nominal){
             '  <arg0>'+NomorPengirim+'</arg0>' +
             '  <arg1>'+NomorPenerima+'</arg1>' +
             '  <arg2>'+Nominal+'</arg2>' +
-            '  <arg3>' + 'abcdef' + '</arg3>' +
+            '  <arg3>' + result + '</arg3>' +
             '</ns2:transfer>' +
             '</S:Body>' +
             '</S:Envelope>';

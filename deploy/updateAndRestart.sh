@@ -11,9 +11,9 @@ git clone git@gitlab.informatika.org:if3110-2019-02-k03-18/bank-pro.git
 
 cd /home/ubuntu/html/bank-pro
 
-#install npm packages
+#install packages
 echo "Running yarn"
-yarn
+yarn install --production
 
 #Build
 echo "Running yarn build"

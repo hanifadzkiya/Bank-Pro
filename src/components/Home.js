@@ -15,8 +15,6 @@ class Home extends Component {
         let baseUrl = 'https://cors-anywhere.herokuapp.com/3.1.12.44:8080/ws-bank_war/services/wsbank';
 
         PostWithSOAP(baseUrl, sessionStorage.getItem('rekening')).then((result) =>{
-            console.log('GOTCHA');
-            console.log(result);
             ShowDetailRekening(result["rekening"]);
         });
 
